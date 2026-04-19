@@ -21,6 +21,8 @@ spring:
           uri: lb://supplier-service
           predicates:
             - Path=/supplier/**
+          filters:
+            - RewritePath=/supplier/(?<segment>.*), /$\{segment}
 
 
 server:
