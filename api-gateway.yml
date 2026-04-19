@@ -17,6 +17,11 @@ spring:
             - Path=/booking/**
           filters:
             - RewritePath=/booking/(?<segment>.*), /$\{segment}
+        - id: supplier-service
+          uri: lb://supplier-service
+          predicates:
+            - Path=/supplier/**
+
 
 server:
   port: 8082
